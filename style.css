@@ -7,4 +7,69 @@ Author: Marty McFly
 
 body{
     font-family: 'Open Sans', sans-serif;
+    background-color: rgb(10, 10, 10);
 }
+
+/***** NAV BAR *****/
+#site-navigation{
+    background-color: rgb(10, 10, 10);
+}
+
+.main-navigation .navbar-brand{
+    color: #FFF;
+}
+#site-navigation a:hover{
+    color: #979696;
+}
+
+#menu-item-17 > a:hover,
+#menu-item-23 > a:hover,
+#menu-item-33 > a:hover{
+    text-decoration: none;
+}
+#menu-item-17 > a,
+#menu-item-23 > a,
+#menu-item-33 > a{
+    color: #FFF;
+}
+
+.main-navigation .primary-menu > li > a{
+    border-bottom: 4px solid rgb(10, 10, 10);
+    border-top: 4px solid rgb(10, 10, 10);
+}
+
+/***** HEADER *****/
+.site-branding a:hover, .site-branding a:active, 
+.site-branding a:visited, .site-branding a:focus{
+    color: white;
+    text-decoration: none;
+}
+
+.site-description {
+    letter-spacing: 3px;
+    text-shadow: rgba(255,255,255,.1) 1px 1px 1px, rgba(0,0,0,.5) 3px 3px 2px;
+}
+
+@media (min-width: 980px){
+
+    #masthead > div.site-header{
+        height: 300px;
+        background-attachment: fixed;
+        background-size: auto;
+    }
+}
+
+/***** BLOG POSTS *****/
+.entry-meta a:hover{
+    text-decoration: none;
+    color: darkslategray;
+}
+
+.entry-meta .fa {
+    color: darkslategray;
+}
+
+.post-content .entry-header .entry-meta::after {
+    background: #FFFF;
+}
+

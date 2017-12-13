@@ -14,6 +14,7 @@
 get_header(); ?>
 
 	<div class="container">
+    
 		<div class="row">
 			<div id="primary" class="col-md-9 content-area">
 				<main id="main" class="site-main" role="main">
@@ -25,8 +26,8 @@ get_header(); ?>
 					<?php endif; ?>
 
 					<?php /* Start the Loop */ ?>
-					<?php while ( have_posts() ) : the_post(); ?>
-						<?php
+                    <?php while ( have_posts() ) : 
+                        the_post();
 						/*
 						 * If you want to disaplay only excerpt, file content-excerpt.php will be used.
 						 * Include the Post-Format-specific template for the content.
