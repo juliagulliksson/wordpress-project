@@ -29,8 +29,6 @@ body{
     text-decoration: none;
 }
 
-
-
 #menu-item-17 > a,
 #menu-item-23 > a,
 #menu-item-33 > a,
@@ -38,15 +36,34 @@ body{
     color: #FFF;
 }
 
+
+li.current-menu-item,
+li .current_page_item,
+li .current-menu-parent{
+    border-top: 4px solid rgb(44, 94, 187);
+ }
+
+
 .main-navigation .primary-menu > li > a{
     border-bottom: 4px solid rgb(10, 10, 10);
     border-top: 4px solid rgb(10, 10, 10);
 }
 
+/* Nav mobile icon bar*/
+.main-navigation .menu-toggle {
+    border-color: rgb(14, 14, 14);
+}
+
+#navigation_menu > div.navbar-header > button > .icon-bar {
+    background-color: #FFF;
+}
+
+
+
 /***** HEADER *****/
-.site-branding a:hover, .site-branding a:active, 
+.site-branding a:active, .site-branding a:hover, 
 .site-branding a:visited, .site-branding a:focus{
-    color: white;
+    color: #FFF;
     text-decoration: none;
 }
 
@@ -74,7 +91,12 @@ body{
     color: darkslategray;
 }
 
-.post-content .entry-header .entry-meta::after {
+.entry-title a:hover, .entry-title a:focus, .entry-title a:active{
+    text-decoration: none;
+    color: darkslategray;
+}
+
+.post-content .entry-header .entry-meta::after, #secondary .widget > h4::after {
     background: #FFFF;
 }
 

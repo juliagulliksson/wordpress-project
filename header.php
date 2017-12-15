@@ -38,7 +38,7 @@
 						<span class="icon-bar"></span>
 					</button>
 				<?php } ?>
-					<a class="navbar-brand" href="<?php echo esc_url( home_url( '/' ) ); ?>"><?php bloginfo( 'name' )?></a>
+					
 			</div><!-- .navbar-header -->
 			<?php if ( has_nav_menu( 'primary' ) ) {
 				wp_nav_menu( array(
