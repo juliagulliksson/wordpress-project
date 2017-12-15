@@ -21,7 +21,7 @@ function documentaries_custom_post_type(){
     $labels = array(
         'name' => 'Documentaries',
         'singular_name' => 'Documentaries',
-        'add_new' => 'Add new Item',
+        'add_new' => 'Add New',
         'all_items' => 'All items',
         'add_new_item' => 'Add Item',
         'edit_item' => 'Edit Item',

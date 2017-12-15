@@ -34,12 +34,12 @@ get_header(); ?>
 						 * If you want to override this in a child theme, then include a file
 						 * called content-___.php (where ___ is the Post Format name) and that will be used instead.
 						 */
-						$post_display_option = get_theme_mod( 'post_display_option', 'post-excerpt' );
-						if ( 'post-excerpt' === $post_display_option ) {
-							get_template_part( 'template-parts/content','excerpt' );
-						} else {
-							get_template_part( 'template-parts/content', get_post_format() );
-						}
+						//$post_display_option = get_theme_mod( 'post_display_option', 'post-excerpt' );
+						//if ( 'post-excerpt' === $post_display_option ) {
+							get_template_part( 'content','posts' );
+						//} else {
+							//get_template_part( 'template-parts/content', get_post_format() );
+						//}
 						?>
 					<?php endwhile; ?>
 					<?php nisarg_posts_navigation(); ?>
@@ -48,7 +48,7 @@ get_header(); ?>
 				<?php endif; ?>
 				</main><!-- #main -->
 			</div><!-- #primary -->
-			<?php get_sidebar( 'sidebar-1' ); ?>
+			<?php get_sidebar( 'custom' ); ?>
 		</div><!--row-->
 	</div><!--.container-->
 	<?php get_footer(); ?>

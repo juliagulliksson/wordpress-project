@@ -13,7 +13,7 @@ get_header(); ?>
 				<main id="main" role="main">
 
 				<?php while ( have_posts() ) : the_post(); ?>
-					<?php get_template_part( 'template-parts/content',get_post_format() ); ?>
+					<?php get_template_part( 'content','posts' ); ?>
 				</main><!-- #main -->
 				<div class="post-navigation">
 					<?php nisarg_post_navigation(); ?>
@@ -32,6 +32,7 @@ get_header(); ?>
 				</div>
 				<?php endwhile; // End of the loop. ?>
 			</div><!-- #primary -->
+			<?php get_sidebar( 'sidebar-1' ); ?>
 		</div> <!--.row-->
 	</div><!--.container-->
 	<?php get_footer(); ?>
