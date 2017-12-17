@@ -56,3 +56,4 @@ function documentaries_custom_post_type(){
 }
 
 add_action('init', 'documentaries_custom_post_type');
+

@@ -78,6 +78,14 @@ li .current-menu-parent{
         background-attachment: fixed;
         background-size: auto;
     }
+
+    .frontpage .flexbox-wrapper{
+        display: flex;
+    }
+
+    .frontpage-posts{
+        flex-basis: 33%;
+    }
 }
 
 /***** BLOG POSTS *****/
@@ -99,22 +107,82 @@ li .current-menu-parent{
     background-color: #FFFF;
 }
 
-#secondary h3.widget-title::after{
-    background-color: #FFFF;
-    bottom: 0px;
+.wrapper-home{
+    background-color: #FFF;
 }
 
-
+.entry-header .entry-title a:hover{
+    color: #979696;
+}
 
 /**** ASIDE ***/
+
+#secondary h4.widget-title::after{
+    background-color: #FFFF;
+}
+
+#secondary h4.widget-title{
+    font-weight: 700;
+}
+
+#secondary{
+    text-align: center;
+}
+
+#secondary .widget li > a:hover, #secondary .widget li > a:hover{
+    text-decoration: none;
+    color: gray;
+}
 
 #search input[type="search"]{
     background-color: #d1cfcf;
 }
+
 #search button, html input[type="button"]{
     color: #d1cfcf;
 }
 
 aside{
     background-color: #FFF;
+}
+
+#secondary .widget{
+    margin-bottom: 0px;
+}
+
+/*** FRONT PAGE ***/
+
+.frontpage .entry-header .entry-title a{
+    color: rgb(20, 20, 20)
+}
+
+.frontpage .entry-header .entry-title a:hover{
+    color: #979696;
+}
+
+.frontpage .entry-content img{
+   height: 250px;
+}
+
+.frontpage .wrapper{
+    background-color: #FFF;
+    width: 95%;
+    margin: 0 auto;
+    padding: 1em;
+}
+
+.frontpage-posts{
+    
+    padding: 10px 10px;
+}
+
+.frontpage .entry-header, .frontpage .entry-content,
+.frontpage .entry-summary, .frontpage .entry-footer{
+    padding: 0px;
+}
+
+.frontpage h1{
+    text-transform: uppercase;
+    text-align: center;
+    margin-bottom: 15px;
 }
