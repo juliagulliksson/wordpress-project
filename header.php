@@ -52,10 +52,19 @@
 	<div id="cc_spacer"></div><!-- used to clear fixed navigation by the themes js -->  
 	<div class="site-header">
 		<div class="site-branding">
-			<a class="home-link" href="<?php echo esc_url( home_url( '/' ) ); ?>" title="<?php echo esc_attr( get_bloginfo( 'name', 'display' ) ); ?>" rel="home">
-				<h1 class="site-title"><?php bloginfo( 'name' ); ?></h1>
-				<h2 class="site-description"><?php bloginfo( 'description' ); ?></h2>
-			</a>
+			<?php 
+			if(get_post_type() == 'mysteries'): ?>
+				<h1 class="site-title">Mysteries</h1>
+				<h2 class="site-description">The great mysteries of the universe</h2>
+			<?php elseif(get_post_type() == 'documentaries'): ?>
+				<h1 class="site-title">Documentaries</h1>
+				<h2 class="site-description">The best space documentaries</h2>
+			<?php else: ?>
+				<a class="home-link" href="<?php echo esc_url( home_url( '/' ) ); ?>" title="<?php echo esc_attr( get_bloginfo( 'name', 'display' ) ); ?>" rel="home">
+					<h1 class="site-title"><?php bloginfo( 'name' ); ?></h1>
+					<h2 class="site-description"><?php bloginfo( 'description' ); ?></h2>
+				</a>
+			<?php endif; ?>
 		</div><!--.site-branding-->
 	</div><!--.site-header-->
 </header>

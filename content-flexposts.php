@@ -5,24 +5,23 @@
  * @package Nisarg
  */
 
-if ( is_sticky() && is_home() && ! is_paged() ) {
+if ( is_sticky() && is_home() && ! is_paged() ) :
     printf( '<span class="sticky-post">%s</span>', __( 'Featured', 'nisarg' ) );
-} ?>
+endif; ?>
 
 <div class="entry-content">
-   <a href="<?php the_permalink(); ?>"><?php the_post_thumbnail(); ?></a>  
-    
-    <?php wp_link_pages( array(
-        'before' => '<div class="page-links">' . esc_html__( 'Pages:', 'nisarg' ),
-        'after'  => '</div>',
-    ) );
-    ?>
+    <?php 
+    if( has_post_thumbnail() ) :
+        $attributes = array('title' => 'Feature image'); ?>
+        <a href="<?php the_permalink(); ?>"><?php the_post_thumbnail('medium', $attributes); ?></a>  
+    <?php endif; ?>
+
 </div><!-- .entry-content -->
 
 <header class="entry-header">
-    <h2 class="entry-title">
+    <h3 class="entry-title">
         <a href="<?php the_permalink(); ?>" rel="bookmark"><?php the_title(); ?></a>
-    </h2>
+    </h3>
     <span class="screen-reader-text"><?php the_title();?></span>
 
 </header><!-- .entry-header -->

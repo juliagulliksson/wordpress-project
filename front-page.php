@@ -8,42 +8,45 @@
 get_header(); ?>
 
 	<div class="container-fluid">
-    
 		<div class="row frontpage">
 			<div id="primary" class="col-md-12 content-area">
 				<main id="main" class="site-main" role="main">
 					<div class="wrapper">
-						<h1>Latest Discoveries</h1>
+						<h2>Recent space news</h2>
 						<div class="flexbox-wrapper">
 							
-							<?php $query = new WP_Query( array('posts_per_page' => 3) );
+							<?php $query = new WP_Query( array('posts_per_page' => 3, 
+															   'post_type' => 'post') );
+
+							//Run function for looping out the 3 thumbnails and titles
+							thumbnail_loop($query); ?>
+								
+						</div><!-- flexbox-wrapper -->
+
+						<h2>The great mysteries of the universe</h2>
+						<div class="flexbox-wrapper">
 							
-							if( $query->have_posts() ):
-								while ( $query->have_posts() ) :
-								?>
-									
-									<div class="frontpage-posts">
+							<?php $mystery_query = new WP_Query( array('posts_per_page' => 3, 
+															   'post_type' => 'mysteries') );
+							
+							//Run function for looping out the 3 thumbnails and titles
+							thumbnail_loop($mystery_query); ?>
+								
+						</div><!-- flexbox-wrapper -->
 
-									<?php $query->the_post();
-
-									
-										get_template_part( 'content','flexposts' );
-										?>
-										</div>
-										
-								<?php endwhile;
-								nisarg_posts_navigation(); 
-							else : 
-								get_template_part( 'template-parts/content', 'none' ); 
-							endif; ?>
+						<h2>Want tips on the best space documentaries to watch?</h2>
+						<div class="flexbox-wrapper">
+							
+							<?php $doco_query = new WP_Query( array('posts_per_page' => 3, 
+															'post_type' => 'documentaries') );
+							
+							//Run function for looping out the 3 thumbnails and titles
+							thumbnail_loop($doco_query); ?>
 								
 						</div><!-- flexbox-wrapper -->
 				 	</div><!-- wrapper -->
-						
-					
-				</main><!-- #main -->
+				</main>
 			</div><!-- #primary -->
-			
 		</div><!--row-->
 	</div><!--.container-->
 	<?php get_footer(); ?>

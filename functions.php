@@ -15,21 +15,13 @@ function my_theme_enqueue_styles() {
     );
 }
 
-// Custom post type
-
-function documentaries_custom_post_type(){
+function create_custom_post_type($post_type_name){
     $labels = array(
-        'name' => 'Documentaries',
-        'singular_name' => 'Documentaries',
-        'add_new' => 'Add New',
-        'all_items' => 'All items',
-        'add_new_item' => 'Add Item',
-        'edit_item' => 'Edit Item',
-        'new_item' => 'New Item',
-        'view_item' => 'View Item',
-        'search_item' => 'Search Documentaries',
-        'not_found' => 'No items found',
-        'not_found_in_trash' => 'No items found in trash',
+        'name' => "$post_type_name",
+        'singular_name' => "$post_type_name",
+        'search_item' => "Search $post_type_name",
+        'not_found' => "No $post_type_name found",
+        'not_found_in_trash' => "No $post_type_name found in trash",
         'parent_item_colon' => 'Parent Item'
     );
     $arguments = array(
@@ -52,8 +44,38 @@ function documentaries_custom_post_type(){
         'menu_position' => 5,
         'exclude_from_search' => false
     );
-    register_post_type('documentaries', $arguments);
+    register_post_type("$post_type_name", $arguments);
 }
 
-add_action('init', 'documentaries_custom_post_type');
+//Create the custom post type "documentaries" by running the function create_custom_post_type
+function documentaries_post_type(){
+    create_custom_post_type("Documentaries");
+}
+
+//Create the custom post type "mysteries" by running the function create_custom_post_type
+function mysteries_post_type(){
+    create_custom_post_type("Mysteries");
+}
+
+add_action('init', 'documentaries_post_type');
+add_action('init', 'mysteries_post_type');
+
+//Function for looping out the 3 thumbnails and titles on the front page
+function thumbnail_loop($query){
+
+    if( $query->have_posts() ):
+        while ( $query->have_posts() ) :
+
+            echo "<div class='frontpage-posts'>";
+                
+                $query->the_post();
+                get_template_part( 'content', 'flexposts' );
+                
+            echo "</div>";
+                
+        endwhile;
+    else : 
+        get_template_part( 'template-parts/content', 'none' ); 
+    endif; 
+} 
 

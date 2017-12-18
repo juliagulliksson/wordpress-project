@@ -14,6 +14,7 @@
 		printf( '<span class="sticky-post">%s</span>', __( 'Featured', 'nisarg' ) );
 	} ?>
 
+
 	<header class="entry-header">
 		<span class="screen-reader-text"><?php the_title();?></span>
 		<?php if ( is_single() ) : ?>
@@ -23,27 +24,27 @@
 				<a href="<?php the_permalink(); ?>" rel="bookmark"><?php the_title(); ?></a>
 			</h2>
 		<?php endif; // is_single() ?>
+
+		<?php if ( 'post' == get_post_type() ) : ?>
+		<div class="entry-meta">
+			<h5 class="entry-date"><?php nisarg_posted_on(); ?></h5>
+		</div><!-- .entry-meta -->
+		<?php endif; ?>
 	</header><!-- .entry-header -->
 
-    <div class="entry-content">
-        <?php
-            the_content( '...<p class="read-more"><a class="btn btn-default" href="'. esc_url( get_permalink( get_the_ID() ) ) . '">' . __( ' Read More', 'nisarg' ) . '<span class="screen-reader-text"> '. __( ' Read More', 'nisarg' ).'</span></a></p>' );
-        ?>
+			<div class="entry-content">
+				<?php
+					the_content( '...<p class="read-more"><a class="btn btn-default" href="'. esc_url( get_permalink( get_the_ID() ) ) . '">' . __( ' Read More', 'nisarg' ) . '<span class="screen-reader-text"> '. __( ' Read More', 'nisarg' ).'</span></a></p>' );
+				?>
 
-        <?php
-            wp_link_pages( array(
-                'before' => '<div class="page-links">' . esc_html__( 'Pages:', 'nisarg' ),
-                'after'  => '</div>',
-            ) );
-        ?>
-    </div><!-- .entry-content -->
+				<?php
+					wp_link_pages( array(
+						'before' => '<div class="page-links">' . esc_html__( 'Pages:', 'nisarg' ),
+						'after'  => '</div>',
+					) );
+				?>
+			</div><!-- .entry-content -->
 
-    <?php if ( 'post' == get_post_type() ) : ?>
-        <div class="entry-meta">
-            <h5 class="entry-date"><?php nisarg_posted_on(); ?></h5>
-        </div><!-- .entry-meta -->
-    <?php endif; ?>
-	
 	<footer class="entry-footer">
 		<?php nisarg_entry_footer(); ?>
 	</footer><!-- .entry-footer -->

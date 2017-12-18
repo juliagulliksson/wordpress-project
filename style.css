@@ -18,30 +18,19 @@ body{
 .main-navigation .navbar-brand{
     color: #FFF;
 }
-#site-navigation a:hover{
-    color: #979696;
+
+.main-navigation #navigation_menu .primary-menu > .current-menu-item > a{
+    border-top: 4px solid rgb(25, 103, 192);
 }
 
-#menu-item-17 > a:hover,
-#menu-item-23 > a:hover,
-#menu-item-33 > a:hover,
-#menu-item-41 > a:hover{
-    text-decoration: none;
-}
-
-#menu-item-17 > a,
-#menu-item-23 > a,
-#menu-item-33 > a,
-#menu-item-41 > a{
+.main-navigation #navigation_menu .primary-menu > li > a{
     color: #FFF;
 }
 
-
-/*li.current-menu-item,
-li .current_page_item,
-li .current-menu-parent{
- }*/
-
+.main-navigation #navigation_menu .primary-menu > li > a:hover{
+    text-decoration: none;
+    color: #979696;
+}
 
 .main-navigation .primary-menu > li > a{
     border-bottom: 4px solid rgb(10, 10, 10);
@@ -56,8 +45,6 @@ li .current-menu-parent{
 #navigation_menu > div.navbar-header > button > .icon-bar {
     background-color: #FFF;
 }
-
-
 
 /***** HEADER *****/
 .site-branding a:active, .site-branding a:hover, 
@@ -81,10 +68,14 @@ li .current-menu-parent{
 
     .frontpage .flexbox-wrapper{
         display: flex;
+        display: -ms-flexbox;
+        display: -webkit-flex;
+        justify-content: center;
     }
 
     .frontpage-posts{
-        flex-basis: 33%;
+        flex-basis: 29%;
+        -webkit-flex-basis: 29%;
     }
 }
 
@@ -113,6 +104,19 @@ li .current-menu-parent{
 
 .entry-header .entry-title a:hover{
     color: #979696;
+}
+
+.entry-summary > p.read-more > a.btn-default{
+    border-bottom: 1px solid rgb(41, 61, 126);
+}
+
+.entry-summary > p.read-more > a.btn-default:hover{
+    background-color: rgb(41, 61, 126);
+    color: white;
+}
+
+.post-content footer > span > a:hover{
+    color: rgb(41, 61, 126);
 }
 
 /**** ASIDE ***/
@@ -152,8 +156,9 @@ aside{
 
 /*** FRONT PAGE ***/
 
-.frontpage .entry-header .entry-title a{
-    color: rgb(20, 20, 20)
+.frontpage .entry-header .entry-title h3 a{
+    color: rgb(20, 20, 20);
+    font-size: 1em;
 }
 
 .frontpage .entry-header .entry-title a:hover{
@@ -161,7 +166,7 @@ aside{
 }
 
 .frontpage .entry-content img{
-   height: 250px;
+   height: 200px;
 }
 
 .frontpage .wrapper{
@@ -172,7 +177,6 @@ aside{
 }
 
 .frontpage-posts{
-    
     padding: 10px 10px;
 }
 
@@ -181,8 +185,10 @@ aside{
     padding: 0px;
 }
 
-.frontpage h1{
+.frontpage h2{
     text-transform: uppercase;
     text-align: center;
     margin-bottom: 15px;
+    font-weight: 700;
+    font-size: 2em;
 }
