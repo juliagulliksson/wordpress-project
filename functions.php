@@ -4,8 +4,8 @@
 * CSS to the '<head>'‐tag. Noneed to edit this code */
 add_action( 'wp_enqueue_scripts', 'my_theme_enqueue_styles' );
 
-function my_theme_enqueue_styles() {
-
+function my_theme_enqueue_styles() 
+{
     $parent_style = 'parent‐style';
     wp_enqueue_style( $parent_style, get_template_directory_uri() . '/style.css' );
     wp_enqueue_style( 'child‐style',
@@ -15,7 +15,8 @@ function my_theme_enqueue_styles() {
     );
 }
 
-function create_custom_post_type($post_type_name){
+function create_custom_post_type($post_type_name)
+{
     $labels = array(
         'name' => "$post_type_name",
         'singular_name' => "$post_type_name",
@@ -61,8 +62,8 @@ add_action('init', 'documentaries_post_type');
 add_action('init', 'mysteries_post_type');
 
 //Function for looping out the 3 thumbnails and titles on the front page
-function thumbnail_loop($query){
-
+function thumbnail_loop($query)
+{
     if( $query->have_posts() ):
         while ( $query->have_posts() ) :
 

@@ -14,8 +14,11 @@
 		printf( '<span class="sticky-post">%s</span>', __( 'Featured', 'nisarg' ) );
 	} ?>
 
+
 	<header class="entry-header">
+
 		<span class="screen-reader-text"><?php the_title();?></span>
+
 		<?php if ( is_single() ) : ?>
 			<h1 class="entry-title"><?php the_title(); ?></h1>
 		<?php else : ?>
@@ -29,20 +32,13 @@
 			<h5 class="entry-date"><?php nisarg_posted_on(); ?></h5>
 		</div><!-- .entry-meta -->
 		<?php endif; ?>
-	</header><!-- .entry-header -->
+    </header><!-- .entry-header -->
+    
+    <?php nisarg_featured_image_disaplay(); ?>
 
-			<div class="entry-content">
-				<?php
-					the_content( '...<p class="read-more"><a class="btn btn-default" href="'. esc_url( get_permalink( get_the_ID() ) ) . '">' . __( ' Read More', 'nisarg' ) . '<span class="screen-reader-text"> '. __( ' Read More', 'nisarg' ).'</span></a></p>' );
-				?>
-
-				<?php
-					wp_link_pages( array(
-						'before' => '<div class="page-links">' . esc_html__( 'Pages:', 'nisarg' ),
-						'after'  => '</div>',
-					) );
-				?>
-			</div><!-- .entry-content -->
+	<div class="entry-summary">
+		<?php the_excerpt(); ?>
+	</div><!-- .entry-summary -->
 
 	<footer class="entry-footer">
 		<?php nisarg_entry_footer(); ?>

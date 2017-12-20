@@ -192,3 +192,9 @@ aside{
     font-weight: 700;
     font-size: 2em;
 }
+
+/** Singles **/
+
+.featured-image img{
+    //margin: 10px -20px 0px 10px;
+}
