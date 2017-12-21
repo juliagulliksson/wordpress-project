@@ -13,7 +13,8 @@ endif; ?>
     <?php 
     if( has_post_thumbnail() ) :
         $attributes = array('title' => 'Feature image'); ?>
-        <a href="<?php the_permalink(); ?>"><?php the_post_thumbnail('medium', $attributes); ?></a>  
+        <div class="thumbnail-wrapper"><a href="<?php the_permalink(); ?>">
+        <?php the_post_thumbnail('medium', $attributes); ?></a></div>
     <?php endif; ?>
 
 </div><!-- .entry-content -->

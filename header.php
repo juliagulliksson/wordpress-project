@@ -21,6 +21,7 @@
 <link rel="profile" href="http://gmpg.org/xfn/11" />
 <link rel="pingback" href="<?php bloginfo( 'pingback_url' ); ?>" />
 <link href="https://fonts.googleapis.com/css?family=Open+Sans" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css?family=Roboto+Condensed" rel="stylesheet">
 <?php wp_head(); ?>
 </head>
 <body <?php body_class(); ?>>
@@ -59,6 +60,9 @@
 			<?php elseif(get_post_type() == 'documentaries'): ?>
 				<h1 class="site-title">Documentaries</h1>
 				<h2 class="site-description">The best space documentaries</h2>
+			<?php elseif(is_home()): ?>
+				<h1 class="site-title">Space news</h1>
+				<h2 class="site-description">Spacey news for space nerds</h2>
 			<?php else: ?>
 				<a class="home-link" href="<?php echo esc_url( home_url( '/' ) ); ?>" title="<?php echo esc_attr( get_bloginfo( 'name', 'display' ) ); ?>" rel="home">
 					<h1 class="site-title"><?php bloginfo( 'name' ); ?></h1>

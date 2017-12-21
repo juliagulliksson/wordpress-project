@@ -11,6 +11,7 @@ body{
 }
 
 /***** NAV BAR *****/
+
 #site-navigation{
     background-color: rgb(10, 10, 10);
 }
@@ -38,6 +39,7 @@ body{
 }
 
 /* Nav mobile icon bar*/
+
 .main-navigation .menu-toggle {
     border-color: rgb(14, 14, 14);
 }
@@ -47,6 +49,7 @@ body{
 }
 
 /***** HEADER *****/
+
 .site-branding a:active, .site-branding a:hover, 
 .site-branding a:visited, .site-branding a:focus{
     color: #FFF;
@@ -58,29 +61,13 @@ body{
     text-shadow: rgba(255,255,255,.1) 1px 1px 1px, rgba(0,0,0,.5) 3px 3px 2px;
 }
 
-@media (min-width: 980px){
-
-    #masthead > div.site-header{
-        height: 300px;
-        background-attachment: fixed;
-        background-size: auto;
-    }
-
-    .frontpage .flexbox-wrapper{
-        display: flex;
-        display: -ms-flexbox;
-        display: -webkit-flex;
-        justify-content: center;
-    }
-
-    .frontpage-posts{
-        flex-basis: 29%;
-        -webkit-flex-basis: 29%;
-    }
+.site-header{
+    margin-bottom: 2em;
 }
 
 /***** BLOG POSTS *****/
-.entry-meta a:hover{
+
+.entry-meta a:hover, .entry-meta a:focus, .entry-meta a:active {
     text-decoration: none;
     color: rgb(41, 61, 126);
 }
@@ -95,14 +82,25 @@ body{
 }
 
 .post-content .entry-header .entry-meta::after{
-    background-color: #FFFF;
+    background-color: #FFF;
 }
 
 .wrapper-home{
     background-color: #FFF;
 }
 
-.entry-header .entry-title a:hover{
+.entry-content a{
+    color: rgb(41, 61, 126);
+    text-decoration: underline;
+}
+
+.entry-content a:hover{
+    color: #979696;
+    text-decoration: none;
+}
+
+.entry-header .entry-title a:hover, .entry-header .entry-title a:active,
+.entry-header .entry-title a:focus{
     color: #979696;
 }
 
@@ -110,7 +108,9 @@ body{
     border-bottom: 1px solid rgb(41, 61, 126);
 }
 
-.entry-summary > p.read-more > a.btn-default:hover{
+.entry-summary > p.read-more > a.btn-default:hover,
+.entry-summary > p.read-more > a.btn-default:active,
+.entry-summary > p.read-more > a.btn-default:focus{
     background-color: rgb(41, 61, 126);
     color: white;
 }
@@ -119,31 +119,40 @@ body{
     color: rgb(41, 61, 126);
 }
 
+.post-content, .single-post-content, .post-comments, .comments-area{
+    margin-bottom: 0.1em;
+}
+
+.nav-links .next-post a:hover, .prev-post a:hover{
+    text-decoration: none;
+    color: #979696;
+}
+
+.archive-page-header .archive-page-title{
+    color: rgb(223, 223, 223);
+}
+
+
 /**** ASIDE ***/
 
 #secondary h4.widget-title::after{
-    background-color: #FFFF;
+    background-color: #FFF;
 }
 
 #secondary h4.widget-title{
     font-weight: 700;
+    font-family: 'Roboto Condensed', sans-serif;
+    margin-bottom: 10px;
 }
 
 #secondary{
     text-align: center;
 }
 
-#secondary .widget li > a:hover, #secondary .widget li > a:hover{
-    text-decoration: none;
-    color: gray;
-}
-
-#search input[type="search"]{
-    background-color: #d1cfcf;
-}
-
-#search button, html input[type="button"]{
-    color: #d1cfcf;
+#secondary .widget li > a:hover, #secondary .widget li > a:active,
+#secondary .widget li > a:focus{
+    text-decoration: underline;
+    color: #979696;
 }
 
 aside{
@@ -156,24 +165,44 @@ aside{
 
 /*** FRONT PAGE ***/
 
-.frontpage .entry-header .entry-title h3 a{
+.intro-text{
+    font-size: 1.15em;
+    color: #525151;
+}
+
+.intro-text a{
+    color: rgb(41, 61, 126);
+}
+
+.intro-text a:hover, .intro-text a:active, .intro-text a:focus{
+    color: rgb(41, 61, 126);
+}
+
+.introduction {
+    width: 75%;
+    margin: 0 auto;
+    text-align: center;
+}
+
+
+#main > .frontpage .entry-header .entry-title h3{
     color: rgb(20, 20, 20);
-    font-size: 1em;
 }
 
 .frontpage .entry-header .entry-title a:hover{
     color: #979696;
 }
 
-.frontpage .entry-content img{
-   height: 200px;
-}
-
 .frontpage .wrapper{
     background-color: #FFF;
     width: 95%;
     margin: 0 auto;
-    padding: 1em;
+}
+
+.frontpage .wrapper h2{
+    padding-top: 30px;
+    margin-top: 0px;
+    font-family: 'Roboto Condensed', sans-serif;
 }
 
 .frontpage-posts{
@@ -193,8 +222,118 @@ aside{
     font-size: 2em;
 }
 
-/** Singles **/
-
-.featured-image img{
-    //margin: 10px -20px 0px 10px;
+.frontpage .border {
+    border-bottom: 2.5px solid rgb(214, 213, 213);
+    height: 10px;
+    width: 90%;
+    margin: 0 auto;
 }
+
+.frontpage .entry-content img:hover,
+.frontpage .entry-content img:active,
+.frontpage .entry-content img:focus{
+    opacity: 0.7;
+ }
+
+ .frontpage .entry-content img{
+    opacity: 1;
+ }
+
+.featured-image{
+    padding: 0 4em;
+}
+
+/***** MEDIA QUERIES *****/
+
+@media screen and (min-width: 980px){
+    
+        #masthead > div.site-header{
+            height: 300px;
+            background-attachment: fixed;
+            background-size: auto;
+        }
+    
+        .frontpage .flexbox-wrapper{
+            display: flex;
+            display: -ms-flexbox;
+            display: -webkit-flex;
+            justify-content: center;
+        }
+    
+        .frontpage-posts{
+            flex-basis: 29%;
+            -webkit-flex-basis: 29%;
+        }
+    
+        .frontpage .entry-content img{
+            height: 100%;
+            width: 100%;
+         }
+         .thumbnail-wrapper{
+           width: auto;
+           height: 200px;
+        }
+    }
+    
+    @media screen and (min-width: 650px) and (max-width: 745px){
+        .frontpage .entry-content img{
+            height: 100%;
+            width: 100%;
+        }
+    
+        .thumbnail-wrapper{
+            width: 60%;
+            margin: 0px auto;
+            height: 200px;
+        }
+    }
+    
+    @media screen and (min-width: 500px) and (max-width: 650px){
+        .frontpage .entry-content img{
+            height: 100%;
+            width: 100%;
+         }
+        
+         .thumbnail-wrapper{
+           width: 90%;
+           margin: 0 auto;
+           height: 200px;
+        }
+
+        .introduction {
+            width: 90%;
+        }
+    }
+    
+    @media screen and (max-width: 500px){
+        .frontpage .entry-content img{
+            width: 100%;
+            min-height: 100%;
+         }
+
+         .thumbnail-wrapper{
+            width: 60%;
+            margin: 0px auto;
+            height: 170px;
+        }
+
+        .introduction {
+            width: 90%;
+        }
+        
+        
+    }
+    
+    @media screen and (min-width: 745px) and (max-width: 980px){
+    
+        .frontpage .entry-content img{
+            width: 100%;
+         }
+    
+         .thumbnail-wrapper{
+            width: 60%;
+            margin: 0px auto;
+            height: 250px;
+
+        }
+    }
