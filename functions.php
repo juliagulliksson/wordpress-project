@@ -39,6 +39,7 @@ function create_custom_post_type($post_type_name)
             'editor',
             'excerpt',
             'thumbnail',
+            'comments',
             'revisions'
         ),
         'taxonomies' => array('category', 'post_tag'),
@@ -79,4 +80,3 @@ function thumbnail_loop($query)
         get_template_part( 'template-parts/content', 'none' ); 
     endif; 
 } 
-

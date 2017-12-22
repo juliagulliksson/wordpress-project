@@ -10,13 +10,11 @@ if ( is_sticky() && is_home() && ! is_paged() ) :
 endif; ?>
 
 <div class="entry-content">
-    <?php 
-    if( has_post_thumbnail() ) :
+    <?php if( has_post_thumbnail() ) :
         $attributes = array('title' => 'Feature image'); ?>
         <div class="thumbnail-wrapper"><a href="<?php the_permalink(); ?>">
         <?php the_post_thumbnail('medium', $attributes); ?></a></div>
     <?php endif; ?>
-
 </div><!-- .entry-content -->
 
 <header class="entry-header">
@@ -24,5 +22,4 @@ endif; ?>
         <a href="<?php the_permalink(); ?>" rel="bookmark"><?php the_title(); ?></a>
     </h3>
     <span class="screen-reader-text"><?php the_title();?></span>
-
 </header><!-- .entry-header -->

@@ -1,6 +1,6 @@
 <?php
 /**
- * The main template file.
+ * The template for the front page
 
  * @package Nisarg
  */
@@ -20,8 +20,7 @@ get_header(); ?>
 						<h2>Recent space news</h2>
 						<div class="flexbox-wrapper">
 
-							<?php $query = new WP_Query( array('posts_per_page' => 3, 
-															   'post_type' => 'post') );
+							<?php $query = new WP_Query( array('posts_per_page' => 3, 'post_type' => 'post') );
 
 							//Run function for looping out the 3 thumbnails and titles
 							thumbnail_loop($query); ?>
@@ -32,8 +31,7 @@ get_header(); ?>
 						<h2>The great mysteries of the universe</h2>
 						<div class="flexbox-wrapper">
 							
-							<?php $mystery_query = new WP_Query( array('posts_per_page' => 3, 
-															   'post_type' => 'mysteries') );
+							<?php $mystery_query = new WP_Query( array('posts_per_page' => 3, 'post_type' => 'mysteries') );
 							
 							//Run function for looping out the 3 thumbnails and titles
 							thumbnail_loop($mystery_query); ?>
@@ -44,8 +42,7 @@ get_header(); ?>
 						<h2>The best space documentaries</h2>
 						<div class="flexbox-wrapper">
 							
-							<?php $doco_query = new WP_Query( array('posts_per_page' => 3, 
-															'post_type' => 'documentaries') );
+							<?php $doco_query = new WP_Query( array('posts_per_page' => 3, 'post_type' => 'documentaries') );
 							
 							//Run function for looping out the 3 thumbnails and titles
 							thumbnail_loop($doco_query); ?>
